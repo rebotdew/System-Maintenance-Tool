@@ -6,10 +6,26 @@
     Theme: Cyberpunk
 #>
 
-# --- 1. Admin Check (Self-Elevation) ---
-if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
-    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
-    Exit
+# --- 1. Admin Check (Cloud/File Compatible) ---
+$IsAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")
+
+if (-not $IsAdmin) {
+    # เช็คว่ารันจากไฟล์จริง หรือรันจาก iex (Memory)
+    if ($PSCommandPath) {
+        # กรณีรันจากไฟล์ -> สั่ง Restart เป็น Admin ได้
+        Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+        Exit
+    } else {
+        # กรณีรันจาก Cloud (iex) -> แจ้งเตือนและหยุดทำงาน (เพราะเราสั่ง Restart ตัวแปรใน Ram ไม่ได้)
+        Write-Host "=============================================" -ForegroundColor Red
+        Write-Host " ERROR: ADMIN RIGHTS REQUIRED" -ForegroundColor Yellow
+        Write-Host "=============================================" -ForegroundColor Red
+        Write-Host " Please Run PowerShell as Administrator first," -ForegroundColor White
+        Write-Host " then paste the command again." -ForegroundColor White
+        Write-Host "=============================================" -ForegroundColor Red
+        Read-Host " Press Enter to Exit..."
+        Exit
+    }
 }
 
 # --- 2. Load Assembly ---
@@ -198,4 +214,5 @@ New-CyberButton $Tab5 "Launch MAS (Activation)" 20 80 $CyberCyan {
 }
 
 # --- Show Form ---
+
 $Form.ShowDialog() | Out-Null
