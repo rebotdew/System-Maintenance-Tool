@@ -6,7 +6,7 @@
 
 > **"High-performance system deployment tool."**
 
-**SMT MODE (GUI)** คือเครื่องมือ System Administrator Utility แบบ All-in-One (Post-Install Tasks)
+**SMT MODE (GUI)** System Administrator Utility All-in-One (Post-Install Tasks)
 
 ---
 
@@ -16,57 +16,52 @@
 
 ---
 
-## 🚀 Features (ความสามารถหลัก)
-
-โปรแกรมแบ่งการทำงานออกเป็น Tab เพื่อง่ายต่อการใช้งาน:
+## 🚀 Features
 
 ### 🔰 [1] Local Config
-จัดการค่าพื้นฐานของเครื่องให้พร้อมใช้งานสำหรับผู้ใช้ในประเทศไทยและ Gamer
-* **Thai Init:** ตั้งค่า Timezone (SE Asia), Region (Thailand), Add Layout TH/EN และตั้งค่าปุ่มเปลี่ยนภาษา (Grave Key/ตัวหนอน) อัตโนมัติ
-* **System Override:** เปิดโหมด **Ultimate Performance**, ลบ Bloatware (BingWeather, People)
-* **Win11 Fix:** คืนค่า Context Menu แบบ Classic (Right-click) ให้เหมือน Windows 10
+
+* **Thai Init:**
+* **System Override:**
+* **Win11 Fix:**
 
 ### 📦 [2] Software Hub
-ติดตั้งโปรแกรมสามัญประจำเครื่องผ่าน **Winget** (ไม่ต้องหาโหลดเอง)
+
 * **Essentials:** Google Chrome, 7-Zip
 * **Office / Work:** LINE PC, Zoom
 * **Media / Fun:** VLC Media Player, Spotify
 
 ### 🔧 [3] Drivers Center
-รวมศูนย์การอัปเดตไดรเวอร์
+
 * **Snappy Driver Installer Origin**
 * **Intel DSA**
 * **Nvidia GeForce Experience**
 
 ### 🔐 [4] Advanced Tools
-เครื่องมือสำหรับช่างเทคนิค
-* **WiFi Revealer:** ดึงรหัสผ่าน WiFi ที่เคยเชื่อมต่อทั้งหมดในเครื่องออกมาแสดง
-* **DNS Override:** ตั้งค่า DNS เป็น Cloudflare (1.1.1.1) เพื่อความเร็วและความเป็นส่วนตัว
-* **Medic Station:** รันคำสั่งซ่อมไฟล์ระบบ (`sfc /scannow`)
-
+* **WiFi Revealer:**
+* **DNS Override:**
+* **Medic Station:**
+  
 ### ☁️ [5] Cloud Uplink
-เชื่อมต่อกับสคริปต์ยอดนิยมจากภายนอก
-* **ChrisTitus Tech WinUtil:** เครื่องมือ Debloat ระดับเทพ
-* **MAS (Microsoft Activation Scripts):** (For educational purposes)
+* **ChrisTitus Tech WinUtil**
+* **MAS (Microsoft Activation Scripts)**
 
 ---
 
-## 🛠️ Requirements (สิ่งที่ต้องมี)
+## 🛠️ Requirements
 
 * **OS:** Windows 10 หรือ Windows 11
-* **PowerShell:** v5.1 ขึ้นไป (ติดมากับเครื่องอยู่แล้ว)
-* **Internet Connection:** จำเป็นสำหรับการโหลดโปรแกรมและไดรเวอร์
-* **Admin Rights:** โปรแกรมจะขอสิทธิ์ Administrator โดยอัตโนมัติเมื่อเปิดใช้งาน
-
+* **PowerShell:** v5.1
+* **Internet Connection:**
+* **Admin Rights:** 
 ---
 
-## 📥 How to Run (วิธีใช้งาน)
+## 📥 How to Run
 
 ### Method 1: Download & Run
-1. ดาวน์โหลดไฟล์ `SMT_GUI.ps1` หรือ Clone repository นี้
-2. คลิกขวาที่ไฟล์ เลือก **"Run with PowerShell"**
-3. หากมีหน้าต่างแจ้งเตือน Execution Policy ให้ตอบ **Yes** หรือ **Run once**
+1. Download `SMT_GUI.ps1` or Clone repository
+2. Rirght Click **"Run with PowerShell"**
+
 
 ### Method 2: Command Line
-เปิด PowerShell หรือ CMD Run as Administrator 
-แล้วรันคำสั่ง: irm bit.ly/SMT_GUI | iex
+1. Open PowerShell or CMD Run as Administrator 
+2. Run : irm bit.ly/SMT_GUI | iex
