@@ -49,7 +49,7 @@
 
 ## 🛠️ Requirements
 
-* **OS:** Windows 10 หรือ Windows 11
+* **OS:** Windows 10 or Windows 11
 * **PowerShell:** v5.1
 * **Internet Connection:**
 * **Admin Rights:** 
